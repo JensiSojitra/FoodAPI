@@ -8,6 +8,7 @@ db.mongoose = mongoose;
 db.url = dbConfig.url;
 db.menu = require("./menu.model")(mongoose);
 db.category = require("./category.model")(mongoose);
+db.table = require("./table.model")(mongoose);
 db.user = require("./user.model");
 db.role = require("./role.model");
 db.review = require("./review.model")(mongoose);
