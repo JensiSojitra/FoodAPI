@@ -41,7 +41,6 @@ app.use(express.urlencoded({ extended: true }));
 //routes mathi app import kravyu(route import)
 require("./routes/menu.routes")(app);
 require("./routes/category.routes")(app);
-require("./routes/user.routes")(app);
 require("./routes/review.route")(app);
 require("./routes/order.routes")(app);
 require("./routes/adminregister.route")(app);
