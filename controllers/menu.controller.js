@@ -2,12 +2,12 @@ const db = require("../models");
 const Menu = db.menu;
 
 exports.create = (req, res) => {
-    if (!req.body.name) {
+    if (!req.body.title) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
     const menu = new Menu({
-        name: req.body.name,
+        title: req.body.title,
         price: req.body.price,
         category: req.body.category,
         foodtype: req.body.foodtype,
