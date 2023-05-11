@@ -5,6 +5,7 @@ const cors = require("cors");
 const expressValidator = require("express-validator");
 const app = express();
 
+global.__basedir = __dirname;
 // =========================================================================
 //react na localhost sathe connect krva mate
 var corsOptions = {
@@ -46,6 +47,7 @@ require("./routes/order.routes")(app);
 require("./routes/adminregister.route")(app);
 require("./routes/table.routes")(app);
 require("./routes/userPrint.route")(app);
+require("./routes/image.routes")(app);
 
 // =========================================================================
 
@@ -54,7 +56,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to Food delivery application." });
 });
 
-const PORT = process.env.PORT || 1111;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
