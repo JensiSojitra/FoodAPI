@@ -13,6 +13,7 @@ db.user = require("./user.model");
 db.role = require("./role.model");
 db.review = require("./review.model")(mongoose);
 db.order = require("./order.model")(mongoose);
+db.userPrint = require("./userPrint.model")(mongoose);
 db.adminRegister = require("./adminregister.model");
 
 db.ROLES = ["user", "admin"];
