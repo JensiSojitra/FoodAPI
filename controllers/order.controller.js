@@ -2,14 +2,14 @@ const db = require("../models");
 const Order = db.order;
 
 exports.create = (req, res) => {
-  if (!req.body.table_no) {
+  if (!req.body.username) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
   }
   const order = new Order({
     user_id: req.body.user_id,
     menu_id: req.body.menu_id,
-    order_time: req.body.order_time,
+    username: req.body.username,
     order_date: req.body.order_date,
     table_no: req.body.table_no,
     total_amt: req.body.total_amt,

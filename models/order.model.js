@@ -11,7 +11,7 @@ module.exports = (mongoose) => {
         type: mongoose.Schema.Types.String,
         ref: "Menu",
       },
-      order_time: String,
+      username: String,
       order_date: Date,
       table_no: Number,
       total_amt: Number,
