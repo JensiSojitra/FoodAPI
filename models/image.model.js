@@ -6,9 +6,7 @@ module.exports = mongoose => {
                 title: String,
                 price: Number,
                 category: String,
-                imagenaame: [{
-                    type: String
-                }]
+                imagenaame: String
             },
             { timestamps: true }
         )
