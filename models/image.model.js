@@ -1,6 +1,6 @@
 module.exports = mongoose => {
-    const Tutorial = mongoose.model(
-        "tutorial",
+    const Image = mongoose.model(
+        "Image",
         mongoose.Schema(
             {
                 title: String,
@@ -14,5 +14,5 @@ module.exports = mongoose => {
         )
     );
 
-    return Tutorial;
+    return Image;
 };

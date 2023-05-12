@@ -1,7 +1,7 @@
 const uploadFile = require("../middleware/upload");
 const fs = require("fs");
 const db = require("../models");
-const Tutorial = db.tutorials;
+const IMAGE = db.images;
 const baseUrl = "http://localhost:8080/files/";
 
 const upload = async (req, res) => {
@@ -15,7 +15,7 @@ const upload = async (req, res) => {
     console.log(req.body.title);
     console.log(req.body.price);
     console.log(req.body.category);
-    const tutorial = new Tutorial({
+    const tutorial = new IMAGE({
         title: req.body.title,
         price: req.body.price,
         category: req.body.category,
@@ -31,14 +31,14 @@ const upload = async (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Tutorial."
+                    err.message || "Some error occurred while creating the image."
             });
         });
 };
 const getListFiles = (req, res) => {
     const directoryPath = __basedir + "/resources/uploads";
 
-    Tutorial.find()
+    IMAGE.find()
         .then(data => {
             let d = data?.map((t) => {
                 let imag = t?.imagenaame?.map((g) => {
@@ -52,7 +52,7 @@ const getListFiles = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving tutorials."
+                    err.message || "Some error occurred while retrieving image."
             });
         });
 };
@@ -127,7 +127,7 @@ const removeSync = (req, res) => {
 // };
 
 const deleteAll = (req, res) => {
-    Tutorial.deleteMany({})
+    IMAGE.deleteMany({})
         .then(data => {
             res.send({
                 message: `${data.deletedCount} Tutorials were deleted successfully!`
@@ -136,7 +136,7 @@ const deleteAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while removing all tutorials."
+                    err.message || "Some error occurred while removing all image."
             });
         });
 };
@@ -150,29 +150,29 @@ const update = (req, res) => {
 
     const id = req.params.id;
 
-    Tutorial.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    IMAGE.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({
-                    message: `Cannot update Tutorial with id=${id}. Maybe Tutorial was not found!`
+                    message: `Cannot update image with id=${id}. Maybe image was not found!`
                 });
-            } else res.send({ message: "Tutorial was updated successfully." });
+            } else res.send({ message: "image was updated successfully." });
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Tutorial with id=" + id
+                message: "Error updating image with id=" + id
             });
         });
 };
 const findAll = (req, res) => {
-    Tutorial.find()
+    IMAGE.find()
         .then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving tutorials."
+                    err.message || "Some error occurred while retrieving image."
             });
         });
 };
