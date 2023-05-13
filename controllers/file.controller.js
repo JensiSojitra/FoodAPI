@@ -8,7 +8,7 @@ const upload = async (req, res) => {
 
     let d = await uploadFile(req, res)
     let gi = req.files.map((y) => {
-        return uploadFile.base64_encode(y)
+        return y.filename
     });
 
     console.log(gi)
@@ -36,7 +36,7 @@ const upload = async (req, res) => {
         });
 };
 const getListFiles = (req, res) => {
-    const directoryPath = "/tmp/";
+    const directoryPath = "/tmp";
 
     IMAGE.find()
         .then(data => {
