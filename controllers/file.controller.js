@@ -2,7 +2,7 @@ const uploadFile = require("../middleware/upload");
 const fs = require("fs");
 const db = require("../models");
 const IMAGE = db.images;
-const baseUrl = "http://localhost:8080/files/";
+const baseUrl = "https://fierce-tux-pig.cyclic.app/files/";
 
 const upload = async (req, res) => {
 
