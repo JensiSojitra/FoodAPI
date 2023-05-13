@@ -36,7 +36,7 @@ const upload = async (req, res) => {
         });
 };
 const getListFiles = (req, res) => {
-    const directoryPath = "/tmp";
+    const directoryPath = "/tmp/";
 
     IMAGE.find()
         .then(data => {
