@@ -8,7 +8,7 @@ const upload = async (req, res) => {
 
     let d = await uploadFile(req, res)
     let gi = req.files.map((y) => {
-        return y.filename
+        return uploadFile.base64_encode(y)
     });
 
     console.log(gi)
