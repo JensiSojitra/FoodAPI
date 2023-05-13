@@ -7,7 +7,7 @@ const baseUrl = "https://fierce-tux-pig.cyclic.app/files/";
 const upload = async (req, res) => {
 
     let d = await uploadFile(req, res)
-    let gi = req.files.map((y) => {
+    let gi = req.files?.map((y) => {
         return y.filename
     });
 
