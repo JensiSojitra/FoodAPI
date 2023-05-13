@@ -72,7 +72,7 @@ const download = (req, res) => {
 
 const remove = (req, res) => {
     const fileName = req.params.name;
-    const directoryPath = "/tmp/";
+    const directoryPath = "/tmp";
 
     fs.unlink(directoryPath + fileName, (err) => {
         if (err) {
