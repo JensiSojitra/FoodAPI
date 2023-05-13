@@ -36,7 +36,7 @@ const upload = async (req, res) => {
         });
 };
 const getListFiles = (req, res) => {
-    const directoryPath = "/tmp";
+    const directoryPath = "/tmp/";
 
     IMAGE.find()
         .then(data => {
@@ -59,7 +59,7 @@ const getListFiles = (req, res) => {
 
 const download = (req, res) => {
     const fileName = req.params.name;
-    const directoryPath = "/tmp";
+    const directoryPath = "/tmp/";
 
     res.download(directoryPath + fileName, fileName, (err) => {
         if (err) {
@@ -72,7 +72,7 @@ const download = (req, res) => {
 
 const remove = (req, res) => {
     const fileName = req.params.name;
-    const directoryPath = "/tmp";
+    const directoryPath = "/tmp/";
 
     fs.unlink(directoryPath + fileName, (err) => {
         if (err) {
@@ -89,7 +89,7 @@ const remove = (req, res) => {
 
 const removeSync = (req, res) => {
     const fileName = req.params.name;
-    const directoryPath = "/tmp";
+    const directoryPath = "/tmp/";
 
     try {
         fs.unlinkSync(directoryPath + fileName);
