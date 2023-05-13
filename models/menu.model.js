@@ -8,7 +8,7 @@ module.exports = mongoose => {
                 title: String,
                 price: Number,
                 category: String,
-                foodtype: String,
+                url: String,
             }
         )
     );

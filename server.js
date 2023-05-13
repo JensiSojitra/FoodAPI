@@ -47,7 +47,7 @@ require("./routes/order.routes")(app);
 require("./routes/adminregister.route")(app);
 require("./routes/table.routes")(app);
 require("./routes/userPrint.route")(app);
-require("./routes/image.routes")(app);
+// require("./routes/image.routes")(app);
 
 // =========================================================================
 

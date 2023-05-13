@@ -10,7 +10,7 @@ exports.create = (req, res) => {
         title: req.body.title,
         price: req.body.price,
         category: req.body.category,
-        foodtype: req.body.foodtype,
+        url: req.body.url,
     });
 
     menu
