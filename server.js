@@ -4,8 +4,6 @@ const cors = require("cors");
 
 const expressValidator = require("express-validator");
 const app = express();
-
-global.__basedir = __dirname;
 // =========================================================================
 //react na localhost sathe connect krva mate
 var corsOptions = {
@@ -47,7 +45,6 @@ require("./routes/order.routes")(app);
 require("./routes/adminregister.route")(app);
 require("./routes/table.routes")(app);
 require("./routes/userPrint.route")(app);
-// require("./routes/image.routes")(app);
 
 // =========================================================================
 
